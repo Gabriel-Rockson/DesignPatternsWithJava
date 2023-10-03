@@ -33,7 +33,7 @@ public class CreditCardPayment implements IPayment {
             return false;
         }
 
-        if (this.getCCAddress().length() < 5) {
+        if (this.getCCAddress().length() < 1) {
             return false;
         }
 
