@@ -6,6 +6,8 @@ import java.util.Set;
 public class YoutubeChannel implements IChannel {
     private String channelName;
     private Set<ISubscriber> subscribers = new HashSet<>();
+    private Set<String> youtubeVideos = new HashSet<>();
+    private String latestVideo;
 
     public YoutubeChannel(String channelName) {
         this.channelName = channelName;
@@ -28,6 +30,14 @@ public class YoutubeChannel implements IChannel {
         }
     }
 
+    public void uploadVideo(String videoName) {
+        youtubeVideos.add(videoName);
+
+        this.setLatestVideo(videoName);
+
+        alert();
+    }
+
     public Set<ISubscriber> getSubscribers() {
         return subscribers;
     }
@@ -42,5 +52,23 @@ public class YoutubeChannel implements IChannel {
 
     public void setChannelName(String channelName) {
         this.channelName = channelName;
+    }
+
+    @Override
+    public Set<String> getYoutubeVideos() {
+        return youtubeVideos;
+    }
+
+    private void setLatestVideo(String video) {
+        this.latestVideo = video;
+    }
+
+    @Override
+    public String getLatestVideo() {
+        return this.latestVideo;
+    }
+
+    public void setYoutubeVideos(Set<String> youtubeVideos) {
+        this.youtubeVideos = youtubeVideos;
     }
 }

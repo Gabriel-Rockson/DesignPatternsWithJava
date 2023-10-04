@@ -22,5 +22,7 @@ public class Subscriber implements ISubscriber {
         System.out.println("A new video has been published by channel: " + this.channel.getChannelName());
 //        System.out.println("Title of video: ");
         System.out.println(this.getName() + " has gotten a notification.");
+        System.out.println("Latest video + " + this.channel.getLatestVideo());
+        System.out.println();
     }
 }

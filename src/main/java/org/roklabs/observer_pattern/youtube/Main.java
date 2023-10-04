@@ -15,7 +15,10 @@ public class Main {
         gabeCodes.add(melindaAmpahKorsah);
         gabeCodes.add(anastasiaFafaAdzraku);
 
-        // trigger an alert
-        gabeCodes.alert();
+        // upload a video
+        gabeCodes.uploadVideo("How to train your dragon");
+
+        // upload another video
+        gabeCodes.uploadVideo("How to become a Java Guru");
     }
 }
