@@ -1,0 +1,21 @@
+package org.roklabs.observer_pattern.youtube;
+
+public class Main {
+    public static void main(String[] args) {
+        // channels
+        IChannel gabeCodes = new YoutubeChannel("Gabe Codes");
+
+        // subscribers
+        ISubscriber gabrielRockson = new Subscriber(gabeCodes, "Gabriel Rockson");
+        ISubscriber melindaAmpahKorsah = new Subscriber(gabeCodes, "Melinda Ampah Korsah");
+        ISubscriber anastasiaFafaAdzraku = new Subscriber(gabeCodes, "Anastasia Fafa Adzraku");
+
+        // subscribe to the channel
+        gabeCodes.add(gabrielRockson);
+        gabeCodes.add(melindaAmpahKorsah);
+        gabeCodes.add(anastasiaFafaAdzraku);
+
+        // trigger an alert
+        gabeCodes.alert();
+    }
+}

@@ -6,4 +6,6 @@ public interface IChannel {
     void remove(ISubscriber subscriber);
 
     void alert();
+
+    String getChannelName();
 }
